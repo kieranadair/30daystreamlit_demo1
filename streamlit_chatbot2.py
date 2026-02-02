@@ -15,8 +15,7 @@ PERSONAS = {
 
 # ─── Functions ───
 @st.cache_resource
-def get_session():
-    return Session.builder.configs(st.secrets["connections"]["snowflake"]).create()
+def get_session(): return Session.builder.configs(st.secrets["connections"]["snowflake"]).create()
 
 def call_llm(p): return json.loads(s.range(1).select(ai_complete(M, p)).collect()[0][0])
 
@@ -33,7 +32,7 @@ with st.sidebar: st.selectbox("Choose your assistant:", options=[*PERSONAS], key
 # ─── Initialisation ───
 if "ms" not in ss:
     ss["ms"] = [
-        {"role": "system", "content": PERSONAS[ss["persona")]},
+        {"role": "system", "content": PERSONAS[ss["persona"]},
         {"role": "assistant", "content": "Hello! How can I help you today?"}
     ]
 
