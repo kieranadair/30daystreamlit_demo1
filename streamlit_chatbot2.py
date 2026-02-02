@@ -32,7 +32,7 @@ with st.sidebar: st.selectbox("Choose your assistant:", options=[*PERSONAS], key
 # ─── Initialisation ───
 if "ms" not in ss:
     ss["ms"] = [
-        {"role": "system", "content": PERSONAS[ss["persona"]},
+        {"role": "system", "content": PERSONAS[ss["persona"]]},
         {"role": "assistant", "content": "Hello! How can I help you today?"}
     ]
 
